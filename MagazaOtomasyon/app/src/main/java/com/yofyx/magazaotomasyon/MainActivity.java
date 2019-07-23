@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_AddProduct,btn_DeleteProduct,btn_UpdateProduct;
@@ -30,16 +31,16 @@ public class MainActivity extends AppCompatActivity {
         btn_AddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            Intent i = new Intent(MainActivity.this,AddProductActivity.class);
+            startActivity(i);
             }
         });
-        
-
         btn_DeleteProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                Intent i = new Intent(MainActivity.this,DeleteProductActivity.class);
+                startActivity(i);
+                Toast.makeText(getApplicationContext(), "Delete Product", Toast.LENGTH_SHORT).show();
             }
         });
 
