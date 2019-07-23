@@ -30,12 +30,10 @@ public class MainActivity extends AppCompatActivity {
         btn_AddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+            Intent i = new Intent(MainActivity.this,AddProductActivity.class);
+            startActivity(i);
             }
         });
-
-
         btn_DeleteProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
