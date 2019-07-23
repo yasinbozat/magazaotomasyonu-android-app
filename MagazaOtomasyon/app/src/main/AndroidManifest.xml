@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".UpdateProductActivity"></activity>
+
+
         <activity android:name=".DeleteProductActivity"></activity>
 
         <activity android:name=".AddProductActivity"></activity>
