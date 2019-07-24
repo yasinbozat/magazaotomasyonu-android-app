@@ -28,25 +28,27 @@ public class AddProductActivity extends AppCompatActivity implements
         //Getting the instance of Spinner and applying OnItemSelectedListener on it
 
 
-        Spinner spin2 = (Spinner) findViewById(R.id.bedenSpın) ;
+        Spinner bedenSpin = (Spinner) findViewById(R.id.bedenSpın) ;
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,beden);
         //-----------------------------------------------------------------------------
-        spin2.setOnItemSelectedListener(this);
+        bedenSpin.setOnItemSelectedListener(this);
 
         //Creating the ArrayAdapter instance having the country list
-        ArrayAdapter bb = new ArrayAdapter(this,android.R.layout.simple_spinner_item,beden);
-          bb.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+          adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         //Setting the ArrayAdapter data on the Spinner
-        spin2.setAdapter(bb);
+        bedenSpin.setAdapter(adapter);
        //-----------------------------------------------------------------------------
-        Spinner spin = (Spinner) findViewById(R.id.urunTuruSpın);
-        spin.setOnItemSelectedListener(this);
+        Spinner urunTuruSpin = (Spinner) findViewById(R.id.urunTuruSpın);
+        urunTuruSpin.setOnItemSelectedListener(this);
 
         //Creating the ArrayAdapter instance having the country list
-        ArrayAdapter aa =
-                new ArrayAdapter(this,android.R.layout.simple_spinner_item,urunturu);
-        aa.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        //ArrayAdapter aa =
+       //         new ArrayAdapter(this,android.R.layout.simple_spinner_item,urunturu);
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         //Setting the ArrayAdapter data on the Spinner
-        spin.setAdapter(aa);
+        urunTuruSpin.setAdapter(adapter
+        );
 
     }
 
