@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Magaza Otomasyon</string>
+    <string name="header">Header</string>
+    <string name="menu">Menü</string>
     <string name="add_product">Ürün Ekle</string>
     <string name="delete_product">Ürün Sil</string>
     <string name="update_product">Ürün Güncelle</string>
+    <string name="error">Bir hata oluştu uygulamayı yeniden başlatın.</string>
 </resources>
