@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         //------------------------------------------------------------------------------------------
 
         //BUTTONS ----------------------------------------------------------------------------------
-        btn_AddProduct = findViewById(R.id.btn_AddProduct);
-        btn_DeleteProduct = findViewById(R.id.btn_DeleteProduct);
-        btn_UpdateProduct = findViewById(R.id.btn_UpdateProduct);
+        btn_AddProduct = findViewById(R.id.menu_btn_AddProduct);
+        btn_DeleteProduct = findViewById(R.id.menu_btn_DeleteProduct);
+        btn_UpdateProduct = findViewById(R.id.menu_btn_UpdateProduct);
         //------------------------------------------------------------------------------------------
 
         btn_AddProduct.setOnClickListener(new View.OnClickListener() {

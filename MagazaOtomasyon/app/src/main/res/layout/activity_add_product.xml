@@ -42,33 +42,46 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/urunTuru"
+        android:id="@+id/txvProductType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/product_type"
         android:textSize="18sp"
         app:fontFamily="@font/titillium_web"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/txvProductName" />
 
     <TextView
-        android:id="@+id/beden"
+        android:id="@+id/txvColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/product_color"
+        android:textSize="18sp"
+        app:fontFamily="@font/titillium_web"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/txvSize" />
+
+    <TextView
+        android:id="@+id/txvSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/product_size"
-        app:fontFamily="@font/titillium_web"
         android:textSize="18sp"
+        app:fontFamily="@font/titillium_web"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/urunTuru" />
+        app:layout_constraintTop_toBottomOf="@+id/txvProductType" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txvProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -76,13 +89,13 @@
         android:text="@string/product_name"
         app:fontFamily="@font/titillium_web"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/urunAdi"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edt_productName"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
     <Spinner
-        android:id="@+id/urunTuruSpın"
+        android:id="@+id/spn_productType"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -92,12 +105,29 @@
         android:popupBackground="@color/colorSecondary"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/urunAdi" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_productName" />
 
     <Spinner
-        android:id="@+id/bedenSpın"
+        android:id="@+id/spn_productColor"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorSecondary"
+        android:popupBackground="@color/colorSecondary"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/spn_productSize2" />
+
+
+    <Spinner
+        android:id="@+id/spn_productSize2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -107,12 +137,10 @@
         android:popupBackground="@color/colorSecondary"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/urunTuruSpın" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/spn_productType" />
 
     <EditText
-        android:id="@+id/urunAdi"
+        android:id="@+id/edt_productName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -130,20 +158,21 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 
-
     <Button
-        android:id="@+id/btnEkle"
+        android:id="@+id/btn_addProduct"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/add"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/bedenSpın" />
+        app:layout_constraintTop_toBottomOf="@+id/spn_productColor" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -157,7 +186,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="360dp" />
+        app:layout_constraintGuide_begin="320dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

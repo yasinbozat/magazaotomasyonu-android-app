@@ -9,5 +9,6 @@
     <string name="product_type">Ürün Türü</string>
     <string name="product_size">Beden</string>
     <string name="product_name">Ürün Adı</string>
+    <string name="product_color">Renk</string>
     <string name="error">Bir hata oluştu uygulamayı yeniden başlatın.</string>
 </resources>

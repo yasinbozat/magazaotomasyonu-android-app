@@ -45,7 +45,7 @@ public class DataBase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void VeriEkle(String urunAdi, String urunTuru, String beden, String renk){
+    public void InsertData(String urunAdi, String urunTuru, String beden, String renk){
         SQLiteDatabase db = this.getWritableDatabase();
         try {
 
@@ -63,4 +63,8 @@ public class DataBase extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void InsertData(String productName, String productSize, String productType) {
+
+        Log.d("DEBUG","insert koduna girdi");
+    }
 }

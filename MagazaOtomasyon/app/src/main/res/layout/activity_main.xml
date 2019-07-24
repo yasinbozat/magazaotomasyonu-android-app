@@ -66,7 +66,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/btn_AddProduct"
+            android:id="@+id/menu_btn_AddProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonshape"
@@ -78,7 +78,7 @@
             />
 
         <Button
-            android:id="@+id/btn_DeleteProduct"
+            android:id="@+id/menu_btn_DeleteProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -88,7 +88,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btn_UpdateProduct"
+            android:id="@+id/menu_btn_UpdateProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
