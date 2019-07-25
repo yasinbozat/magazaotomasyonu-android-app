@@ -2,10 +2,14 @@ package com.yofyx.magazaotomasyon;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase extends SQLiteOpenHelper {
 
@@ -31,11 +35,11 @@ public class DataBase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL("CREATE TABLE "+ TABLE_URUNLER + "("
-                + ROW_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + ROW_URUNADI + "TEXT NOT NULL,"
-                + ROW_URUNTURU + "TEXT NOT NULL,"
-                + ROW_BEDEN + "TEXT NOT NULL,"
-                + ROW_RENK + "TEXT NOT NULL)"
+                + ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + ROW_URUNADI + " TEXT NOT NULL,"
+                + ROW_URUNTURU + " TEXT NOT NULL,"
+                + ROW_BEDEN + " TEXT NOT NULL,"
+                + ROW_RENK + " TEXT NOT NULL)"
         );
     }
 
@@ -63,5 +67,25 @@ public class DataBase extends SQLiteOpenHelper {
         db.close();
     }
 
+    public List<String> SelectData(){
+        List<String> data = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            String[] columns = {ROW_ID,ROW_URUNADI,ROW_URUNTURU,ROW_BEDEN};
+            Cursor cursor = db.query(TABLE_URUNLER, columns,null,null,null,null,null);
+            while (cursor.moveToNext()){
+                data.add(cursor.getInt(0)
+                        + " - "
+                        + cursor.getString(1)
+                        + " - "
+                        + cursor.getString(2)
+                        + " - "
+                        + cursor.getString(3));
+            }
+        }catch (Exception e){
+        }
+        db.close();
+        return data;
+    }
 
 }
