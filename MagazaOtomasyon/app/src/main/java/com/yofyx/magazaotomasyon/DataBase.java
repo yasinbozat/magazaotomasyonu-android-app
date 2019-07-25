@@ -88,4 +88,24 @@ public class DataBase extends SQLiteOpenHelper {
         return data;
     }
 
+    public List<String> getProductType()
+    {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT "+ROW_URUNTURU+" FROM "+ TABLE_URUNLER;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        List<String> list_productType = new ArrayList<String>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                list_productType.add(cursor.getString(1));
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return list_productType;
+    }
 }

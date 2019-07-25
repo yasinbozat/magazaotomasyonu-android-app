@@ -13,12 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class AddProductActivity extends AppCompatActivity implements
+import java.util.List;
 
+public class AddProductActivity extends AppCompatActivity {
 
-    AdapterView.OnItemSelectedListener {
+    private List<String> list_productType;//Spinnerlara sqlden çekilen verileri tutmak için.
 
-    String[] urunturu = { " ","Pantolon", "Tişört", "Gömlek", "Şort", "Mont"};
     String[] beden = { " ","a", "b", "c", "d", "e"};
 
     Button btnAddProduct;
@@ -26,6 +26,8 @@ public class AddProductActivity extends AppCompatActivity implements
     Spinner spnProductType,spnProductSize,spnProductColor;
     DataBase db;
     String productName,productType, productSize, productColor;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,18 +44,9 @@ public class AddProductActivity extends AppCompatActivity implements
         spnProductType = findViewById(R.id.spn_productType);
         spnProductSize = findViewById(R.id.spn_productColor);
         spnProductColor = findViewById(R.id.spn_productColor);
+        ProductTypeSpinnerValues();
 
 
-
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,
-                                                                                             beden);
-
-        spnProductSize.setOnItemSelectedListener(this);
-        spnProductType.setOnItemSelectedListener(this);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        spnProductSize.setAdapter(adapter);
-        spnProductType.setAdapter(adapter);
 
 
         btnAddProduct.setOnClickListener(new View.OnClickListener() {
@@ -69,18 +62,16 @@ public class AddProductActivity extends AppCompatActivity implements
             }
         });
     }
+    private void ProductTypeSpinnerValues()
+    {
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int position , long id) {
-
+        list_productType = db.getProductType();
+        ArrayAdapter<String> spinner_adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item, list_productType);
+        spinner_adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spnProductType.setAdapter(spinner_adapter);
 
     }
-    @Override
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
-    }
+
 
 }
-
-
