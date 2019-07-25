@@ -7,6 +7,10 @@
      android:background="@color/colorThird"
      tools:context=".MainActivity">
 
+
+
+
+
      <androidx.constraintlayout.widget.Guideline
          android:id="@+id/guideline"
          android:layout_width="wrap_content"
@@ -22,15 +26,16 @@
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent"
+         android:contentDescription="@string/header"
          app:srcCompat="@color/colorFirst" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="86dp"
         android:layout_height="47dp"
-        android:text="Menu"
+        android:text="@string/menu"
         android:textColor="@color/colorThird"
-        android:textSize="32dp"
+        android:textSize="32sp"
         app:autoSizeMaxTextSize="32dp"
         app:autoSizeMinTextSize="32dp"
         app:fontFamily="@font/titillium_web"
@@ -61,35 +66,47 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/btn_AddProduct"
+            android:id="@+id/menu_btn_AddProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonshape"
             android:text="@string/add_product"
-
+            app:fontFamily="@font/titillium_web"
             android:textColor="@color/colorFirst"
-            android:textSize="18dp"
+            android:textSize="18sp"
 
             />
 
         <Button
-            android:id="@+id/btn_DeleteProduct"
+            android:id="@+id/menu_btn_DeleteProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            app:fontFamily="@font/titillium_web"
             android:background="@drawable/buttonshape"
             android:text="@string/delete_product"
             android:textColor="@color/colorFirst"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btn_UpdateProduct"
+            android:id="@+id/menu_btn_UpdateProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            app:fontFamily="@font/titillium_web"
             android:background="@drawable/buttonshape"
             android:text="@string/update_product"
             android:textColor="@color/colorFirst"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/menu_btn_ViewProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:fontFamily="@font/titillium_web"
+            android:background="@drawable/buttonshape"
+            android:text="@string/product_view"
+            android:textColor="@color/colorFirst"
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
