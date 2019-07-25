@@ -63,8 +63,5 @@ public class DataBase extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void InsertData(String productName, String productSize, String productType) {
 
-        Log.d("DEBUG","insert koduna girdi");
-    }
 }

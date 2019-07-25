@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -38,18 +39,17 @@ public class AddProductActivity extends AppCompatActivity implements
         spnProductSize = findViewById(R.id.spn_productColor);
         spnProductColor = findViewById(R.id.spn_productColor);
 
-        /*
-        Spinner bedenSpin = (Spinner) findViewById(R.id.spn_size) ;
-        Spinner urunTuruSpin = (Spinner) findViewById(R.id.spn_productType);
+
+
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,beden);
 
-        bedenSpin.setOnItemSelectedListener(this);
-        urunTuruSpin.setOnItemSelectedListener(this);
+        spnProductSize.setOnItemSelectedListener(this);
+        spnProductType.setOnItemSelectedListener(this);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        bedenSpin.setAdapter(adapter);
-        urunTuruSpin.setAdapter(adapter);
-        */
+        spnProductSize.setAdapter(adapter);
+        spnProductType.setAdapter(adapter);
+
 
         btnAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class AddProductActivity extends AppCompatActivity implements
                 String productColor = spnProductColor.getSelectedItem().toString();
 
                 DataBase db = new DataBase(AddProductActivity.this);
-                db.InsertData(productName, productSize, productType,productColor);
+                db.InsertData(productName, productType, productSize, productColor);
                 Log.d("DEBUG","buton kodundan çıktı");
 
             }

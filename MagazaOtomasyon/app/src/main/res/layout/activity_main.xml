@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/buttonshape"
             android:text="@string/add_product"
-
+            app:fontFamily="@font/titillium_web"
             android:textColor="@color/colorFirst"
             android:textSize="18sp"
 
@@ -82,6 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            app:fontFamily="@font/titillium_web"
             android:background="@drawable/buttonshape"
             android:text="@string/delete_product"
             android:textColor="@color/colorFirst"
@@ -92,8 +93,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            app:fontFamily="@font/titillium_web"
             android:background="@drawable/buttonshape"
             android:text="@string/update_product"
+            android:textColor="@color/colorFirst"
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/menu_btn_ViewProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:fontFamily="@font/titillium_web"
+            android:background="@drawable/buttonshape"
+            android:text="@string/product_view"
             android:textColor="@color/colorFirst"
             android:textSize="18sp" />
     </LinearLayout>
