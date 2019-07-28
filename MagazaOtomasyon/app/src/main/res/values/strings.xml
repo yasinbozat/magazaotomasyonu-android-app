@@ -6,6 +6,12 @@
     <string name="delete_product">Ürün Sil</string>
     <string name="update_product">Ürün Güncelle</string>
     <string name="add">Ekle</string>
+
+    <string name="update">Güncelle</string>
+
+    <string name="delete">Sil</string>
+    <string name="product_id">Ürün ID</string>
+
     <string name="product_type">Ürün Türü</string>
     <string name="product_size">Beden</string>
     <string name="product_name">Ürün Adı</string>

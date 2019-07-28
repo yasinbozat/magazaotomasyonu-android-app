@@ -2,10 +2,14 @@ package com.yofyx.magazaotomasyon;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase extends SQLiteOpenHelper {
 
@@ -31,11 +35,11 @@ public class DataBase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL("CREATE TABLE "+ TABLE_URUNLER + "("
-                + ROW_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + ROW_URUNADI + "TEXT NOT NULL,"
-                + ROW_URUNTURU + "TEXT NOT NULL,"
-                + ROW_BEDEN + "TEXT NOT NULL,"
-                + ROW_RENK + "TEXT NOT NULL)"
+                + ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + ROW_URUNADI + " TEXT NOT NULL,"
+                + ROW_URUNTURU + " TEXT NOT NULL,"
+                + ROW_BEDEN + " TEXT NOT NULL,"
+                + ROW_RENK + " TEXT NOT NULL)"
         );
     }
 
@@ -63,5 +67,58 @@ public class DataBase extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void Delete(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            String where = ROW_ID + " = " + id ;
+            db.delete(TABLE_URUNLER,where,null);
+        }catch (Exception e){
+        }
+        db.close();
+    }
 
+
+    public List<String> SelectData(){
+        List<String> data = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            String[] columns = {ROW_ID,ROW_URUNADI,ROW_URUNTURU,ROW_BEDEN,ROW_RENK};
+            Cursor cursor = db.query(TABLE_URUNLER, columns,null,null,null,null,null);
+            while (cursor.moveToNext()){
+                data.add(cursor.getInt(0)
+                        + "   -   "
+                        + cursor.getString(1)
+                        + "   -   "
+                        + cursor.getString(2)
+                        + "   -   "
+                        + cursor.getString(3)
+                        + "   -   "
+                        + cursor.getString(4));
+            }
+        }catch (Exception e){
+        }
+        db.close();
+        return data;
+    }
+
+    public List<String> getProductType()
+    {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT "+ROW_URUNTURU+" FROM "+ TABLE_URUNLER;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        List<String> list_productType = new ArrayList<String>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                list_productType.add(cursor.getString(1));
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return list_productType;
+    }
 }
