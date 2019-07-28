@@ -11,5 +11,6 @@
     <string name="product_name">Ürün Adı</string>
     <string name="product_color">Renk</string>
     <string name="product_view">Görüntüle</string>
-
+    <string name="deleteId">Silinicek ID</string>
+    <string name="deletebtnId">SİL</string>
 </resources>
