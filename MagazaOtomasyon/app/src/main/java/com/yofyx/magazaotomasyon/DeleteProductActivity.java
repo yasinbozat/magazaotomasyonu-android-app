@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.concurrent.ExecutionException;
 
 public class DeleteProductActivity extends AppCompatActivity {
 
@@ -28,17 +31,20 @@ public class DeleteProductActivity extends AppCompatActivity {
         delete_Id = findViewById(R.id.delete_Id);
 
 
-        final String stringId = delete_Id.toString();
-
 
         btn_deleteId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // VeriTabanı classımızı tanımlıyoruz
-               DataBase db = new DataBase(DeleteProductActivity.this);
-               Integer intId = Integer.parseInt(stringId);
-                db.VeriSil(intId);
+             try {
 
+                 String stringId = delete_Id.getText().toString();
+                 Integer intId = Integer.parseInt(stringId);
+                 DataBase db = new DataBase(DeleteProductActivity.this);
+                 db.VeriSil(intId);
+
+             }catch (Exception e){
+
+             }
             }
         });
 
