@@ -40,7 +40,7 @@ public class DeleteProductActivity extends AppCompatActivity {
                  String stringId = delete_Id.getText().toString();
                  Integer intId = Integer.parseInt(stringId);
                  DataBase db = new DataBase(DeleteProductActivity.this);
-                 db.VeriSil(intId);
+                 db.Delete(intId);
 
              }catch (Exception e){
 

@@ -67,10 +67,9 @@ public class DataBase extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void VeriSil(int id){
+    public void Delete(int id){
         SQLiteDatabase db = this.getWritableDatabase();
         try {
-            // id ye göre verimizi siliyoruz
             String where = ROW_ID + " = " + id ;
             db.delete(TABLE_URUNLER,where,null);
         }catch (Exception e){
@@ -83,16 +82,18 @@ public class DataBase extends SQLiteOpenHelper {
         List<String> data = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         try {
-            String[] columns = {ROW_ID,ROW_URUNADI,ROW_URUNTURU,ROW_BEDEN};
+            String[] columns = {ROW_ID,ROW_URUNADI,ROW_URUNTURU,ROW_BEDEN,ROW_RENK};
             Cursor cursor = db.query(TABLE_URUNLER, columns,null,null,null,null,null);
             while (cursor.moveToNext()){
                 data.add(cursor.getInt(0)
-                        + " - "
+                        + "   -   "
                         + cursor.getString(1)
-                        + " - "
+                        + "   -   "
                         + cursor.getString(2)
-                        + " - "
-                        + cursor.getString(3));
+                        + "   -   "
+                        + cursor.getString(3)
+                        + "   -   "
+                        + cursor.getString(4));
             }
         }catch (Exception e){
         }
