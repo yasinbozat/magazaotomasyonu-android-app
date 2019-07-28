@@ -34,6 +34,7 @@ public class AddProductActivity extends AppCompatActivity {
                                                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //------------------------------------------------------------------------------------------
 
+        btnAddProduct = findViewById(R.id.btn_updateProduct);
         btnAddProduct = findViewById(R.id.btn_addProduct);
         edtProductName = findViewById(R.id.edt_productName);
         spnProductType = findViewById(R.id.spn_productType);
@@ -52,7 +53,6 @@ public class AddProductActivity extends AppCompatActivity {
                     db.InsertData(productName, "Pantolon", "38", "mavi");
                 }catch (Exception e){
                     Log.d("DEBUG", String.valueOf(e));
-
                 }
             }
         });
