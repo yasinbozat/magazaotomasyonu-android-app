@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //------------------------------------------------------------------------------------------
 
+        //DATABASE CREATE CODES --------------------------------------------------------------------
+        DataBase db = new DataBase(MainActivity.this);
+
+        //------------------------------------------------------------------------------------------
+
         //BUTTONS ----------------------------------------------------------------------------------
         btn_AddProduct = findViewById(R.id.menu_btn_AddProduct);
         btn_DeleteProduct = findViewById(R.id.menu_btn_DeleteProduct);
