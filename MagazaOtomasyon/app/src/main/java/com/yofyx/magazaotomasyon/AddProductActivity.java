@@ -33,7 +33,7 @@ public class AddProductActivity extends AppCompatActivity implements
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //------------------------------------------------------------------------------------------
-        btnAddProduct = findViewById(R.id.btn_addProduct);
+        btnAddProduct = findViewById(R.id.btn_updateProduct);
         edtProductName = findViewById(R.id.edt_productName);
         spnProductType = findViewById(R.id.spn_productType);
         spnProductSize = findViewById(R.id.spn_productColor);
